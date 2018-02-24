@@ -1,0 +1,86 @@
+.ios, .md {
+ 
+    home-page {
+ 
+      .scroll {
+        height: 100%
+      }
+ 
+      #map {
+        width: 100%;
+        height: 100%;
+      }
+
+      #centr{
+      	z-index:10;
+      	position: absolute;
+      	left: 43.2%;
+      	top: 44%;
+      	font-size: 55px;
+      	color: #01579b;
+      }
+      #In1{
+      	width:30%;
+      	position: absolute;
+      	left: 21%;
+      	top: 15%;
+      	z-index:11;
+      	background:#fff;
+      	padding-left:5px;
+      }
+      #In2{
+      	width:30%;
+      	position: absolute;
+      	left: 56%;
+      	top: 15%;
+      	z-index:11;
+      	background:#fff;
+      	padding-left:5px;
+      }
+      #In3{
+      	width:13%;
+      	height:9.8%;
+      	position: absolute;
+      	left: 6.5%;
+            font-size: 14px;
+      	top: 4.3%;
+      	z-index:11;
+            background:#fff;
+      }
+      #In4{
+      	width:73%;
+            height: 10%;
+            valign: center;
+      	position: absolute;
+      	left: 20%;
+      	top: 5%;
+      	z-index:11;
+            padding-top: 3px;
+      	background:#fff;
+            font-size: 16px;
+      	padding-left:5px;
+      }
+      #sol{
+      	position: absolute;
+      	bottom: -.7%;
+            height: 12%;
+            width: 30%;
+            font-size: 15px;
+      	z-index:11;
+            right:-.5%;
+      }
+      #coc{
+            position: absolute;
+            bottom: 0%;
+            width: 70%;
+            height: 12.23%;
+            font-size: 16px;
+            z-index:11;
+      }
+      #sel{
+            margin-left: -20%;
+      }
+ 
+    }
+ 
+}

@@ -1,0 +1,61 @@
+<ion-header >
+
+  <ion-navbar color="bluedark">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Vehículos</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="centrar()"><ion-icon name="expand" style="font-size: 22px;"></ion-icon></button>
+      <button ion-button (click)="addMarker()"><ion-icon name="flag" style="font-size: 22px;"></ion-icon></button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  id="vehi" padding>
+
+	<ion-card>
+
+	  <ion-card-header id="tit">
+	    <b>Agregados</b>
+	  </ion-card-header>
+
+	  <ion-list>
+	    <button ion-item>
+	      <ion-icon name="car" item-start></ion-icon>
+	      Nissan
+	      <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+	    </button>
+
+	    <hr>
+
+	    <button ion-item>
+	      <ion-icon name="bus" item-start></ion-icon>
+	      BMW
+	      <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+	    </button>
+
+	    <hr>
+
+	    <button ion-item>
+	      <ion-icon name="car" item-start></ion-icon>
+	      Tesla
+	      <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
+	    </button>
+
+	    <button ion-item color="teal" outline id="agregar">
+		    <ion-icon name="add" item-start></ion-icon>
+		    Nuevo
+		</button>
+
+	  </ion-list>
+
+	</ion-card>
+
+</ion-content>

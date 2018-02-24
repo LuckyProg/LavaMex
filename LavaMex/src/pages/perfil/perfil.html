@@ -1,0 +1,53 @@
+<ion-header >
+
+  <ion-navbar color="bluedark">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Mi Perfil</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+<ion-content scrollbar-x="false" scrollbar-y="false">
+	<div #per id="per" text-center>
+		<ion-icon #ic id="ic" name="person"></ion-icon>
+
+		<p>
+			#D45CG67
+			<br>
+			<b>David de la Rocha</b>
+		</p>
+
+	</div> 
+
+	<div #dat id="dat">
+
+		<ion-list>
+
+		  <ion-item id="in">
+		    <ion-label id="lab">Correo</ion-label>
+		    <ion-input id="lab2" [(ngModel)]="correo"></ion-input>
+		  </ion-item>
+
+		  <ion-item id="in">
+		    <ion-label id="lab">Teléfono</ion-label>
+		    <ion-input id="lab2" type="number" [(ngModel)]="tel"></ion-input>
+		  </ion-item>
+
+		  <ion-item id="in">
+		    <ion-label id="lab">Contraseña</ion-label>
+		    <ion-input id="lab2" type="password" [(ngModel)]="pass"></ion-input>
+		  </ion-item>
+
+		</ion-list>
+
+		<div padding>
+		  <button ion-button full #sol id="sol" color="teal" (click)="guardar()">Guardar</button>
+		</div>
+
+	</div>
+  
+</ion-content>

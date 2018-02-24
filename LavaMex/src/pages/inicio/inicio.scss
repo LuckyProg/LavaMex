@@ -1,0 +1,47 @@
+page-inicio {
+
+	#body{
+		background: url('../assets/imgs/bg1.jpeg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		color: #f0f0f0;
+	}
+
+	#sol{
+		font-size: 15px;
+		background: #01579b;
+		border-radius: 5px;
+	}
+
+	#tit{
+		font-size: 30px;
+		height: 30%;
+	}
+
+	#logo{
+		width: 56%;
+		height: 95%;
+	}
+
+	#en{
+		color: #424242;
+		background: rgba(144,202,249,.95);
+		border: 1px solid #90caf9;
+		border-radius: 5px;
+		font-size: 15px;
+	}
+
+	#in1{
+		border-radius: 5px;
+		background: rgba(255,255,255,.95);
+		margin-bottom: 10px;
+		color: #424242;
+	}
+
+	#in2{
+		border-radius: 5px;
+		background: rgba(255,255,255,.95);
+		color: #424242;
+	}
+
+}

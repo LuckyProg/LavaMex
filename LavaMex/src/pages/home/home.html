@@ -1,0 +1,51 @@
+<ion-header >
+
+  <ion-navbar color="bluedark">
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>V Shine</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="centrar()"><ion-icon name="expand" style="font-size: 22px;"></ion-icon></button>
+      <button ion-button (click)="addMarker()"><ion-icon name="flag" style="font-size: 22px;"></ion-icon></button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <button ion-button (click)="buscar()" color="blue" outline #In3 id="In3">
+    <ion-icon name="search"></ion-icon>
+  </button>
+
+  <ion-input placeholder="Lat" type="hidden" #In1 id="In1" [(ngModel)]="lat"></ion-input>
+
+  <ion-input placeholder="Long" type="hidden" #In2 id="In2" [(ngModel)]="lon"></ion-input>
+
+  <ion-input placeholder="Buscar dirección" color="blue" outline type="text" #In4 id="In4" [(ngModel)]="address"></ion-input>
+
+  <div #map id="map"></div> 
+
+  <ion-icon #centr id="centr" name="ios-locate-outline"></ion-icon>
+
+  <div>
+    <ion-list>
+      <ion-item id="coc">
+        <ion-label>Vehiculo</ion-label>
+        <ion-select [(ngModel)]="vehiculo" id="sel">
+          <ion-option value="Nissan">Nissan</ion-option>
+          <ion-option value="BMW">BMW</ion-option>
+          <ion-option value="Tesla">Tesla</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  
+    <button ion-button #sol id="sol" color="green" (click)="solicitarL()">Confirmar</button>
+  </div>
+
+</ion-content>
