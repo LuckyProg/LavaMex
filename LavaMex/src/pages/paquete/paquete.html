@@ -1,0 +1,174 @@
+<!--
+  Generated template for the PaquetePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title>Paquete</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="confirmar()">
+        <span style="color:#4caf50;font-weight: bold;">Siguiente</span>
+      </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="cuerpo">
+
+	<ion-grid>
+
+      <ion-row>
+
+        <ion-col id="nomar">
+        	<ion-row>
+	        	<ion-card id="nomar" [ngClass]="(paquete == 1) ? 'sel' : 'nosel'" (click)="selPaquete(1)">
+				  <img src="../assets/imgs/shine.png"/>
+				  <ion-card-content>
+				    <ion-card-title style="text-align: center;" [ngClass]="(paquete == 1) ? 'sel' : 'nosel'">
+				      Express
+				      </ion-card-title>
+				    <p style="text-align: center;" [ngClass]="(paquete == 1) ? 'sel' : 'nosel'">
+				      Lavado exterior con abrillantador.
+				    </p>
+				  </ion-card-content>
+				</ion-card>
+			</ion-row>
+			<ion-row [ngClass]="(paquete == 1) ? 'dis' : 'nodis'" style="margin-top: -22px;">
+				<ion-col>
+					<ion-card (click)="selPago(1)" [ngClass]="(metPago == 1) ? 'ver' : 'nover'">
+						<ion-card-content>
+						    <ion-card-title style="font-size:16px;" >
+						      &nbsp;&nbsp;<ion-icon name="cash"></ion-icon>&nbsp;&nbsp;Efectivo
+						      </ion-card-title>
+						  </ion-card-content>
+					</ion-card>
+					<ion-card (click)="selPago(2)" [ngClass]="(metPago == 2) ? 'ver' : 'nover'">
+						<ion-card-content>
+						    <ion-card-title style="font-size:16px;" >
+						      &nbsp;&nbsp;<ion-icon name="card" style=""></ion-icon>&nbsp;&nbsp;Paypal
+						      </ion-card-title>
+						  </ion-card-content>
+					</ion-card>
+				</ion-col>
+			</ion-row>
+        </ion-col>
+
+        <ion-col id="nomar">
+        	<ion-row>
+	        	<ion-card id="nomar" [ngClass]="(paquete == 2) ? 'sel' : 'nosel'" (click)="selPaquete(2)">
+				  <img src="../assets/imgs/shine.png"/>
+				  <ion-card-content>
+				    <ion-card-title style="text-align: center;" [ngClass]="(paquete == 2) ? 'sel' : 'nosel'">
+				      Plus
+				      </ion-card-title>
+				    <p style="text-align: center;" [ngClass]="(paquete == 2) ? 'sel' : 'nosel'">
+				      Lavado exterior con abrillantador, aspirado interior (no incluye cajuela).
+				    </p>
+				  </ion-card-content>
+				</ion-card>
+			</ion-row>
+			<ion-row [ngClass]="(paquete == 2) ? 'dis' : 'nodis'" style="margin-top: -22px;">
+				<ion-col>
+					<ion-card (click)="selPago(1)" [ngClass]="(metPago == 1) ? 'ver' : 'nover'">
+						<ion-card-content>
+						    <ion-card-title style="font-size:16px;" >
+						      &nbsp;&nbsp;<ion-icon name="cash"></ion-icon>&nbsp;&nbsp;Efectivo
+						      </ion-card-title>
+						  </ion-card-content>
+					</ion-card>
+					<ion-card (click)="selPago(2)" [ngClass]="(metPago == 2) ? 'ver' : 'nover'">
+						<ion-card-content>
+						    <ion-card-title style="font-size:16px;" >
+						      &nbsp;&nbsp;<ion-icon name="card" style=""></ion-icon>&nbsp;&nbsp;Paypal
+						      </ion-card-title>
+						  </ion-card-content>
+					</ion-card>
+				</ion-col>
+			</ion-row>
+        </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+
+        <ion-col id="nomar">
+        	<ion-row>
+	        	<ion-card id="nomar" [ngClass]="(paquete == 3) ? 'sel' : 'nosel'" (click)="selPaquete(3)">
+				  <img src="../assets/imgs/shine.png"/>
+				  <ion-card-content>
+				    <ion-card-title style="text-align: center;" [ngClass]="(paquete == 3) ? 'sel' : 'nosel'">
+				      Pro
+				      </ion-card-title>
+				    <p style="text-align: center;" [ngClass]="(paquete == 3) ? 'sel' : 'nosel'">
+				      Lavado exterior con abrillantador, encerado, aspirado interior (incluye cajuela).
+				    </p>
+				  </ion-card-content>
+				</ion-card>
+			</ion-row>
+			<ion-row [ngClass]="(paquete == 3) ? 'dis' : 'nodis'" style="margin-top: -22px;">
+				<ion-col>
+					<ion-card (click)="selPago(1)" [ngClass]="(metPago == 1) ? 'ver' : 'nover'">
+						<ion-card-content>
+						    <ion-card-title style="font-size:16px;" >
+						      &nbsp;&nbsp;<ion-icon name="cash"></ion-icon>&nbsp;&nbsp;Efectivo
+						      </ion-card-title>
+						  </ion-card-content>
+					</ion-card>
+					<ion-card (click)="selPago(2)" [ngClass]="(metPago == 2) ? 'ver' : 'nover'">
+						<ion-card-content>
+						    <ion-card-title style="font-size:16px;" >
+						      &nbsp;&nbsp;<ion-icon name="card" style=""></ion-icon>&nbsp;&nbsp;Paypal
+						      </ion-card-title>
+						  </ion-card-content>
+					</ion-card>
+				</ion-col>
+			</ion-row>
+        </ion-col>
+
+        <ion-col id="nomar">
+        	<ion-row>
+	        	<ion-card id="nomar" [ngClass]="(paquete == 4) ? 'sel' : 'nosel'" (click)="selPaquete(4)">
+				  <img src="../assets/imgs/shine.png"/>
+				  <ion-card-content>
+				    <ion-card-title style="text-align: center;" [ngClass]="(paquete == 4) ? 'sel' : 'nosel'">
+				      Premium
+				      </ion-card-title>
+				    <p style="text-align: center;" [ngClass]="(paquete == 4) ? 'sel' : 'nosel'">
+				      Lavado exterior con abrillantador, pulido y encerado, lavado motor, aspirado interior (incluye cajuela).
+				    </p>
+				  </ion-card-content>
+				</ion-card>
+			</ion-row>
+			<ion-row [ngClass]="(paquete == 4) ? 'dis' : 'nodis'" style="margin-top: -22px;">
+				<ion-col>
+					<ion-card (click)="selPago(1)" [ngClass]="(metPago == 1) ? 'ver' : 'nover'">
+						<ion-card-content>
+						    <ion-card-title style="font-size:16px;" >
+						      &nbsp;&nbsp;<ion-icon name="cash"></ion-icon>&nbsp;&nbsp;Efectivo
+						      </ion-card-title>
+						  </ion-card-content>
+					</ion-card>
+					<ion-card (click)="selPago(2)" [ngClass]="(metPago == 2) ? 'ver' : 'nover'">
+						<ion-card-content>
+						    <ion-card-title style="font-size:16px;" >
+						      &nbsp;&nbsp;<ion-icon name="card" style=""></ion-icon>&nbsp;&nbsp;Paypal
+						      </ion-card-title>
+						  </ion-card-content>
+					</ion-card>
+				</ion-col>
+			</ion-row>
+        </ion-col>
+
+      </ion-row>
+
+    </ion-grid>
+
+</ion-content>

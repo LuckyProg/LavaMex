@@ -1,0 +1,78 @@
+<!--
+  Generated template for the CalendarioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title>Fecha y hora</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="confirmar()">
+        <span style="color:#4caf50;font-weight: bold;">Siguiente</span>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="agenda">
+
+	<div class="calendar-header">
+    <ion-row class="calendar-month">
+      <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="arrow-back"></ion-icon></ion-col>
+      <ion-col col-8>{{currentMonth}} {{currentYear}}</ion-col>
+      <ion-col col-2 (click)="goToNextMonth()"><ion-icon name="arrow-forward"></ion-icon></ion-col>
+    </ion-row>
+  </div>
+  <div class="calendar-body">
+    <ion-grid>
+      <ion-row class="calendar-weekday">
+        <ion-col>Do</ion-col>
+        <ion-col>Lu</ion-col>
+        <ion-col>Ma</ion-col>
+        <ion-col>Mi</ion-col>
+        <ion-col>Ju</ion-col>
+        <ion-col>Vi</ion-col>
+        <ion-col>Sa</ion-col>
+      </ion-row>
+      <ion-row class="calendar-date">
+        <ion-col col-1 *ngFor="let lastDay of daysInLastMonth" class="last-month" (click)="goToLastMonth()">{{lastDay}}</ion-col>
+        <ion-col col-1 *ngFor="let day of daysInThisMonth" id="dia" (click)="selectDate(day)">
+          <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
+          <ng-template #otherDate class="otherDate">
+            {{day}}<br>
+            <div class="event-bullet"></div>
+          </ng-template>
+        </ion-col>
+        <ion-col col-1 *ngFor="let nextDay of daysInNextMonth" class="next-month" (click)="goToNextMonth()">{{nextDay}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <br>
+  <ion-grid>
+    <div *ngFor="let horario of horarios">
+
+      <ion-row class="horario0" *ngIf="horariosel === horario.hora">
+        <ion-col (click)="selectHour(horario.hora)"><b>{{horario.hora}}:00</b> <br> {{horario.hora+1}}:00</ion-col>
+        <ion-col (click)="selectHour(horario.hora)" class="lib" *ngIf="horario.dis === 0">Libre</ion-col>
+        <ion-col (click)="selectHour(horario.hora)" class="no" #noDis *ngIf="horario.dis === 1">No Disponible</ion-col>
+        <ion-col (click)="selectHour(horario.hora)" class="con" #enCon *ngIf="horario.dis === 2">En Confirmación</ion-col>
+      </ion-row>
+
+      <ion-row class="horario" *ngIf="horariosel != horario.hora">
+        <ion-col (click)="selectHour(horario.hora)"><b>{{horario.hora}}:00</b> <br> {{horario.hora+1}}:00</ion-col>
+        <ion-col (click)="selectHour(horario.hora)" class="lib" *ngIf="horario.dis === 0">Libre</ion-col>
+        <ion-col (click)="selectHour(horario.hora)" class="no" #noDis *ngIf="horario.dis === 1">No Disponible</ion-col>
+        <ion-col (click)="selectHour(horario.hora)" class="con" #enCon *ngIf="horario.dis === 2">En Confirmación</ion-col>
+      </ion-row>
+
+    </div>
+  </ion-grid>
+
+</ion-content>

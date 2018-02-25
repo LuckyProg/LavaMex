@@ -1,0 +1,59 @@
+page-paquete {
+
+	@keyframes aparecer {
+	    from {opacity: 0;}
+	    to {opacity: 1;}
+	}
+
+	@keyframes azul {
+	    from {background: #f3f3f3;color: #000;}
+	    to {background: #0288d1;color: #f0f0f0;}
+	}
+
+	@keyframes verde {
+	    from {background: #fff;color: #000;}
+	    to {background: #66bb6a;color: #f0f0f0;}
+	}
+	
+	.cuerpo{
+		background: #ffecb3;
+	}
+
+	#nomar{
+		border-radius: 10px;
+	}
+
+	.sel{
+		background: #0288d1;
+		color: #f0f0f0;
+		animation-name: azul;
+    	animation-duration: .2s;
+	}
+
+	.nosel{
+		background: #f3f3f3;
+	}
+
+	.dis{
+		display: block;
+		animation-name: aparecer;
+    	animation-duration: 1.3s;
+	}
+
+	.nodis{
+		display: none;
+	}
+
+	.ver{
+		background: #66bb6a;
+		color: #f0f0f0;
+		animation-name: verde;
+    	animation-duration: .2s;
+    	font-size:16px;
+	}
+
+	.nover{
+		font-size:16px;
+	}
+
+}
