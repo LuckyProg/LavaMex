@@ -1,7 +1,8 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AlertController } from 'ionic-angular';
+import { CalendarioPage } from '../calendario/calendario';
  
 declare var google;
  
@@ -20,13 +21,15 @@ export class HomePage {
   vehiculo = "";
   
  
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public geolocation: Geolocation) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public geolocation: Geolocation) {
  
   }
  
   ionViewDidLoad(){
   	this.loadMap();
-  	
+  	if(this.navParams.get('alert')){
+  		this.alerta();
+  	} 
   }
  
   	loadMap(){
@@ -79,8 +82,8 @@ export class HomePage {
 		    title: 'na',
 		    buttons: ['OK']
 		  });
-		  alert.setTitle("Datos del lavado");
-		  alert.setMessage('[Coche: '+this.vehiculo+']; [Latitud: '+this.lat+']; [Longitud: '+this.lon+'];');
+		  alert.setTitle("Solicitud completada!");
+		  alert.setMessage('Puedes ver los lavados agendados en el apartado de Historial.');
           alert.present();
   	}
 
@@ -114,7 +117,10 @@ export class HomePage {
 		let latLng = this.map.getCenter()
 		this.lat = latLng.lat();
 	    this.lon = latLng.lng();
-		this.alerta();
+		//this.alerta();
+		this.navCtrl.push(CalendarioPage, {
+		    lat: this.lat, lon: this.lon, vehiculo: this.vehiculo
+		});
 	}
  
 }
