@@ -1,0 +1,50 @@
+<!--
+  Generated template for the RegistrarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>registrar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h2>User List</h2>
+
+  <ion-list>
+    <ion-item *ngFor="let u of users">
+      {{u.nombre}}
+    </ion-item>
+  </ion-list>
+
+  <div>
+  	<h2>Add User</h2>
+	  <form (ngSubmit)="saveUsr()">
+	    <ion-item>
+	      <ion-label>Nombre</ion-label>
+	      <ion-input type="text" [(ngModel)]="user.nombre" name="nombre"></ion-input>
+	    </ion-item>
+	    <ion-item>
+	      <ion-label>Correo</ion-label>
+	      <ion-input type="email" [(ngModel)]="user.correo" name="correo"></ion-input>
+	    </ion-item>
+	    <ion-item>
+	      <ion-label>Celular</ion-label>
+	      <ion-input type="text" [(ngModel)]="user.celular" name="celular"></ion-input>
+	    </ion-item>
+	    <ion-item>
+	      <ion-label>Contraseña</ion-label>
+	      <ion-input type="password" [(ngModel)]="user.pass" name="pass"></ion-input>
+	    </ion-item>
+	    
+	    <button ion-button type="submit" block>Add User</button>
+	  </form>
+  </div>
+
+</ion-content>

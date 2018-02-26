@@ -8,6 +8,9 @@ import { HistorialPage } from '../pages/historial/historial';
 import { VehiculosPage } from '../pages/vehiculos/vehiculos';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { InicioPage } from '../pages/inicio/inicio';
+import { PagoPage } from '../pages/pago/pago';
+import { RegistrarPage } from '../pages/registrar/registrar';
+
 
 @Component({
   templateUrl: 'app.html'

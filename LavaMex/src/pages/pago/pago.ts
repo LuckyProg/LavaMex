@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { WebServiceProvider } from '../../providers/web-service/web-service';
 
 /**
  * Generated class for the PagoPage page.
@@ -24,11 +25,10 @@ export class PagoPage {
   paquete: any;
   metPago: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public webService: WebServiceProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PagoPage');
     this.lon = this.navParams.get('lon'); 
     this.lat = this.navParams.get('lat'); 
     this.vehiculo = this.navParams.get('vehiculo');
