@@ -39,32 +39,7 @@ export class InicioPage {
       prompt.present();
     }
 
-    let prompt = this.alertCtrl.create({
-      title: 'Login',
-      message: "Ingresar IP del servidor",
-      inputs: [
-        {
-          name: 'title',
-          placeholder: 'Title'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Save',
-          handler: data => {
-            console.log('Saved clicked');
-            this.ip = data.title;
-          }
-        }
-      ]
-    });
-    prompt.present();
+    this.ip = "localhost";
 
   }
 

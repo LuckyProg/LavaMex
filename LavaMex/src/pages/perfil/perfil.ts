@@ -15,9 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PerfilPage {
 
-	correo = "derdavid2010@gmail.com";
+	correo = "luckyprog.mx@gmail.com";
 	tel = "5529553090";
-	pass = "dadi1809"
+	pass = "1234"
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
