@@ -22,24 +22,57 @@ export class InicioPage {
   user: any = {nombre:'',correo:'',celular:'',pass:''};
   correo: any;
   pass: any;
+  ip: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public webService: WebServiceProvider, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad InicioPage');
-  }
 
-  saveUsr(){
-      console.log("Paso 1");
-      this.webService.saveUser(this.user);
+    console.log('ionViewDidLoad InicioPage');
+
+    if(this.navParams.get('alerta')){
+      let prompt = this.alertCtrl.create({
+        title: '¡Ha sido registrado exitosamente!',
+        message: "Ahora puede iniciar sesion."
+      });
+      prompt.present();
     }
 
+    let prompt = this.alertCtrl.create({
+      title: 'Login',
+      message: "Ingresar IP del servidor",
+      inputs: [
+        {
+          name: 'title',
+          placeholder: 'Title'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            console.log('Saved clicked');
+            this.ip = data.title;
+          }
+        }
+      ]
+    });
+    prompt.present();
+
+  }
+
   entrar(){
-    this.webService.iniciarSesion(this.correo, this.pass)
+    this.webService.iniciarSesion(this.correo, this.pass, this.ip)
       .subscribe(
         (data) => { // Success
-          if(data.length){
+          if(Object.keys(data).length!=0){
             this.navCtrl.setRoot(HomePage);
           }
           else{
@@ -58,7 +91,7 @@ export class InicioPage {
   }
 
   registrar(){
-    this.navCtrl.push(RegistrarPage);
+    this.navCtrl.push(RegistrarPage, {ip: this.ip});
   }
 
 }

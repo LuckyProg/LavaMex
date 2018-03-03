@@ -11,17 +11,18 @@ export class WebServiceProvider {
     console.log('Hello WebServiceProvider Provider');
   }
 
-  	getUsers(){
-		return this.http.get('http://192.168.1.109:3000/usuarios');
+  	getUsers(ip: any){
+		return this.http.get('http://'+ip+':3000/usuarios');
 	}
 
-	iniciarSesion(correo: any, pass: any){
-		return this.http.get('http://192.168.1.109:3000/usuario/validar?correo='+correo+'&pass='+pass);
+	iniciarSesion(correo: any, pass: any, ip: any){
+		console.log(ip);
+		return this.http.get('http://'+ip+':3000/usuario/validar?correo='+correo+'&pass='+pass);
 	}
 
-	saveUser(data: any) {
+	saveUser(data: any, ip: any) {
 
-		const req = this.http.post('http://192.168.1.109:3000/usuarios', data)
+		const req = this.http.post('http://'+ip+':3000/usuarios', data)
 	      .subscribe(
 	        res => {
 	          console.log(res);
