@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { WebServiceProvider } from '../../providers/web-service/web-service';
+import { GlobalProvider } from '../../providers/global/global';
 import { RegistrarPage } from '../registrar/registrar';
 import { AlertController } from 'ionic-angular';
 
@@ -24,12 +25,13 @@ export class InicioPage {
   pass: any;
   ip: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public webService: WebServiceProvider, public alertCtrl: AlertController) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public webService: WebServiceProvider, public alertCtrl: AlertController, public globi: GlobalProvider) {
   }
 
   ionViewDidLoad() {
 
-    console.log('ionViewDidLoad InicioPage');
+    console.log('ionViewDidLoad InicioPage '+this.globi.ip);
 
     if(this.navParams.get('alerta')){
       let prompt = this.alertCtrl.create({
@@ -38,8 +40,33 @@ export class InicioPage {
       });
       prompt.present();
     }
-
-    this.ip = "localhost";
+    let prompt = this.alertCtrl.create({
+      title: 'Login',
+      message: "Ingresa la IP",
+      inputs: [
+        {
+          name: 'title',
+          placeholder: 'IP'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            console.log('Saved clicked '+ data.title);
+            this.globi.ip = data.title;
+            this.ip = data.title;
+          }
+        }
+      ]
+    });
+    prompt.present();
 
   }
 
@@ -48,7 +75,9 @@ export class InicioPage {
       .subscribe(
         (data) => { // Success
           if(Object.keys(data).length!=0){
-            this.navCtrl.setRoot(HomePage);
+            this.globi.id = data[0]._id;
+            console.log(this.globi.ip+' '+this.globi.id);
+            this.navCtrl.setRoot(HomePage, {id: data[0]._id, ip: this.ip});
           }
           else{
             let alert = this.alertCtrl.create({

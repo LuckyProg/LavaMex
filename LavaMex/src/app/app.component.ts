@@ -11,7 +11,6 @@ import { InicioPage } from '../pages/inicio/inicio';
 import { PagoPage } from '../pages/pago/pago';
 import { RegistrarPage } from '../pages/registrar/registrar';
 
-
 @Component({
   templateUrl: 'app.html'
 })

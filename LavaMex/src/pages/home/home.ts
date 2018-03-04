@@ -19,6 +19,8 @@ export class HomePage {
   lat = 0;
   lon = 0;
   vehiculo = "";
+  id: any;
+  ip: any;
   
  
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public geolocation: Geolocation) {
@@ -27,9 +29,11 @@ export class HomePage {
  
   ionViewDidLoad(){
   	this.loadMap();
+  	this.id = this.navParams.get('id');
+  	this.ip = this.navParams.get('ip');
   	if(this.navParams.get('alert')){
   		this.alerta();
-  	} 
+  	}
   }
  
   	loadMap(){
@@ -119,7 +123,7 @@ export class HomePage {
 	    this.lon = latLng.lng();
 		//this.alerta();
 		this.navCtrl.push(CalendarioPage, {
-		    lat: this.lat, lon: this.lon, vehiculo: this.vehiculo
+		    lat: this.lat, lon: this.lon, vehiculo: this.vehiculo, id: this.id, ip: this.ip
 		});
 	}
  

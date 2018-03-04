@@ -19,6 +19,7 @@ import { RegistrarPage } from '../pages/registrar/registrar';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WebServiceProvider } from '../providers/web-service/web-service';
+import { GlobalProvider } from '../providers/global/global';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { WebServiceProvider } from '../providers/web-service/web-service';
     Geolocation,
     Calendar,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    WebServiceProvider
+    WebServiceProvider,
+    GlobalProvider
   ]
 })
 export class AppModule {}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { WebServiceProvider } from '../../providers/web-service/web-service';
 
 /**
  * Generated class for the PerfilPage page.
@@ -15,15 +16,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PerfilPage {
 
-	correo = "luckyprog.mx@gmail.com";
-	tel = "5529553090";
-	pass = "1234"
+	correo = "";
+	tel = "";
+	pass = "";
+  nombre = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public webs: WebServiceProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilPage');
+    this.webs.usuarioId()
+    .subscribe(
+        (data) => { // Success
+          console.log(data.nombre);
+          this.correo = data.correo;
+          this.tel = data.celular;
+          this.pass = data.pass;
+          this.nombre = data.nombre;
+        },
+        (error) =>{
+          console.error(error);
+        }
+      );
   }
 
 }

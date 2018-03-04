@@ -19,7 +19,7 @@ import { InicioPage } from '../inicio/inicio';
 export class RegistrarPage {
 	
   users: any;
-  user: any = {nombre:'',correo:'',celular:'',pass:''};
+  user: any = {nombre:'',correo:'',celular:'',pass:'',carros:{placa:'',modelo:'',color:'',marca:''}};
   ip: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public webService: WebServiceProvider, public alertCtrl: AlertController) {
@@ -42,8 +42,9 @@ export class RegistrarPage {
   }
 
   saveUsr(){
-    console.log("Paso 1");
+    console.log("Paso 1______"+this.user.carros.placa);
     this.webService.saveUser(this.user, this.ip);
+    this.regresar();
   }
 
   regresar(){

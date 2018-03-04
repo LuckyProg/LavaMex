@@ -42,7 +42,24 @@
 	      <ion-label>Contraseña</ion-label>
 	      <ion-input type="password" [(ngModel)]="user.pass" name="pass"></ion-input>
 	    </ion-item>
-	    
+	    <br>
+	    <h2>Vehículo</h2>
+	    <ion-item>
+	      <ion-label>Marca</ion-label>
+	      <ion-input type="text" [(ngModel)]="user.carros.marca" name="caMarca"></ion-input>
+	    </ion-item>
+	    <ion-item>
+	      <ion-label>Modelo</ion-label>
+	      <ion-input type="text" [(ngModel)]="user.carros.modelo" name="caModelo"></ion-input>
+	    </ion-item>
+	    <ion-item>
+	      <ion-label>Placa</ion-label>
+	      <ion-input type="text" [(ngModel)]="user.carros.placa" name="caPlaca"></ion-input>
+	    </ion-item>
+	    <ion-item>
+	      <ion-label>Color</ion-label>
+	      <ion-input type="text" [(ngModel)]="user.carros.color" name="caColor"></ion-input>
+	    </ion-item>
 	    <button ion-button type="submit" block>Add User</button>
 	  </form>
   </div>

@@ -33,16 +33,23 @@ export class CalendarioPage {
   horarios: any;
   horariosel: any;
   fechasel: any = "";
+  dia: any;
+  mes: any;
+  ano: any;
+  id: any;
+  ip: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private calendar: Calendar) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CalendarioPage');
+    this.id = this.navParams.get('id');
+    this.ip = this.navParams.get('ip');
     this.lon = this.navParams.get('lon'); 
     this.lat = this.navParams.get('lat'); 
     this.vehiculo = this.navParams.get('vehiculo'); 
-	this.alerta();
+	//this.alerta();
 	this.horarios = [{hora: 9, dis: 0},{hora: 11, dis: 2},{hora: 13, dis: 0},{hora: 15, dis: 0},{hora: 17, dis: 1}];
 	this.date = new Date();
     this.monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -108,7 +115,6 @@ export class CalendarioPage {
 
 	  selectDate(day) {
 	    this.currentDate = day;
-	    this.fechasel = this.currentDate+"/"+(this.date.getMonth()+1)+"/"+this.date.getFullYear();
 	  }
 
 	  selectHour(hora: any){
@@ -116,9 +122,13 @@ export class CalendarioPage {
 	  }
 
 	  confirmar(){
+	  	this.fechasel = this.currentDate+"/"+(this.date.getMonth()+1)+"/"+this.date.getFullYear();
+	  	this.dia = this.currentDate;
+	    this.mes = this.date.getMonth()+1;
+	    this.ano = this.date.getFullYear();
 	  	this.navCtrl.push(PaquetePage, {
 		    lat: this.lat, lon: this.lon, vehiculo: this.vehiculo, horario: this.horariosel, 
-		    fecha: this.fechasel
+		    fecha: this.fechasel, id: this.id, day: this.dia, month: this.mes, year: this.ano, ip: this.ip
 		});
 	  }
 
