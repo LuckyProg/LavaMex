@@ -29,11 +29,12 @@ export class PerfilPage {
     this.webs.usuarioId()
     .subscribe(
         (data) => { // Success
-          console.log(data.nombre);
-          this.correo = data.correo;
-          this.tel = data.celular;
-          this.pass = data.pass;
-          this.nombre = data.nombre;
+          let resul: any;
+          console.log(resul.nombre);
+          this.correo = resul.correo;
+          this.tel = resul.celular;
+          this.pass = resul.pass;
+          this.nombre = resul.nombre;
         },
         (error) =>{
           console.error(error);

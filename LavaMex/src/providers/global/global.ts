@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class GlobalProvider {
 
 	public ip: any;
-	pubic id: any;
+	public id: any;
 
   constructor(public http: HttpClient) {
     console.log('Hello GlobalProvider Provider');
