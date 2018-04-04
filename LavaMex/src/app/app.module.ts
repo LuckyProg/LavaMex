@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Calendar } from '@ionic-native/calendar';
 import { HttpClientModule } from '@angular/common/http';
+import { Facebook } from '@ionic-native/facebook';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -60,7 +61,8 @@ import { GlobalProvider } from '../providers/global/global';
     Calendar,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     WebServiceProvider,
-    GlobalProvider
+    GlobalProvider,
+    Facebook
   ]
 })
 export class AppModule {}

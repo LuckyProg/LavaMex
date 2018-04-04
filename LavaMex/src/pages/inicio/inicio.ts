@@ -5,6 +5,7 @@ import { WebServiceProvider } from '../../providers/web-service/web-service';
 import { GlobalProvider } from '../../providers/global/global';
 import { RegistrarPage } from '../registrar/registrar';
 import { AlertController } from 'ionic-angular';
+import { Facebook } from '@ionic-native/facebook';
 
 /**
  * Generated class for the InicioPage page.
@@ -21,12 +22,12 @@ import { AlertController } from 'ionic-angular';
 export class InicioPage {
 
   user: any = {nombre:'',correo:'',celular:'',pass:''};
-  correo: any;
-  pass: any;
-  ip: any;
+  correo: any = "derdavid2010@gmail.com";
+  pass: any = "dadi1809";
+  ip: any = "localhost";
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public webService: WebServiceProvider, public alertCtrl: AlertController, public globi: GlobalProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public webService: WebServiceProvider, public alertCtrl: AlertController, public globi: GlobalProvider, private fb: Facebook) {
   }
 
   ionViewDidLoad() {
@@ -60,14 +61,13 @@ export class InicioPage {
           text: 'Save',
           handler: data => {
             console.log('Saved clicked '+ data.title);
-            this.globi.ip = data.title;
             this.ip = data.title;
           }
         }
       ]
     });
-    prompt.present();
-
+    //prompt.present();
+    this.globi.ip = this.ip;
   }
 
   entrar(){
@@ -96,6 +96,33 @@ export class InicioPage {
 
   registrar(){
     this.navCtrl.push(RegistrarPage, {ip: this.ip});
+  }
+
+  loginfb(){
+    this.fb.login(['public_profile', 'user_friends', 'email'])
+    .then(res => {
+      if(res.status === "connected") {
+        this.getUserDetail(res.authResponse.userID);
+      } else {
+      }
+    })
+    .catch(e => console.log('Error logging into Facebook', e));
+  }
+
+  getUserDetail(userid) {
+    this.fb.api("/"+userid+"/?fields=id,email,name,picture,gender",["public_profile"])
+      .then(res => {
+        console.log(res);
+        let users:any = res;
+        let prompt = this.alertCtrl.create({
+          title: 'Facebook:',
+          message: "Nombre: "+users.name+"correo: "+users.email
+        });
+        prompt.present();
+      })
+      .catch(e => {
+        console.log(e);
+      });
   }
 
 }

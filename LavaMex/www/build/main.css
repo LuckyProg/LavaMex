@@ -40024,7 +40024,7 @@ page-calendario .con {
 }
 
 page-inicio #body {
-  background: url("../assets/imgs/bg1.jpeg");
+  background: #141f3d;
   background-size: cover;
   background-repeat: no-repeat;
   color: #f0f0f0;
@@ -40042,8 +40042,8 @@ page-inicio #tit {
 }
 
 page-inicio #logo {
-  width: 56%;
-  height: 95%;
+  width: 60%;
+  height: 100%;
 }
 
 page-inicio #en {
@@ -40178,7 +40178,7 @@ page-paquete .nover {
 
 page-perfil #per {
   height: 45%;
-  background: #37474f;
+  background: #263238;
   color: #fff;
 }
 
@@ -40218,6 +40218,11 @@ page-perfil #lab {
 
 page-perfil #lab2 {
   color: #0f0f0f;
+}
+
+page-perfil #nom {
+  align: center;
+  color: #fff;
 }
 
 page-vehiculos #vehi {

@@ -470,25 +470,27 @@ var PerfilPage = (function () {
         this.tel = "";
         this.pass = "";
         this.nombre = "";
+        this.id = "";
     }
     PerfilPage.prototype.ionViewDidLoad = function () {
         var _this = this;
         console.log('ionViewDidLoad PerfilPage');
         this.webs.usuarioId()
             .subscribe(function (data) {
-            var resul;
+            var resul = data;
             console.log(resul.nombre);
             _this.correo = resul.correo;
             _this.tel = resul.celular;
             _this.pass = resul.pass;
-            _this.nombre = resul.nombre;
+            _this.nombre = "    Nombre:  " + resul.nombre;
+            _this.id = "    Código:  " + resul._id;
         }, function (error) {
             console.error(error);
         });
     };
     PerfilPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-perfil',template:/*ion-inline-start:"/home/derdavid2010/Documentos/LavaMex/LavaMex/src/pages/perfil/perfil.html"*/'<ion-header >\n\n  <ion-navbar color="bluedark">\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>Mi Perfil</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n<ion-content scrollbar-x="false" scrollbar-y="false">\n	<div #per id="per" text-center>\n		<ion-icon #ic id="ic" name="person"></ion-icon>\n\n		<p>\n			#D45CG67\n			<br>\n			<ion-input disabled [(ngModel)]="nombre"></ion-input>\n		</p>\n\n	</div> \n\n	<div #dat id="dat">\n\n		<ion-list>\n\n		  <ion-item id="in">\n		    <ion-label id="lab">Correo</ion-label>\n		    <ion-input id="lab2" [(ngModel)]="correo"></ion-input>\n		  </ion-item>\n\n		  <ion-item id="in">\n		    <ion-label id="lab">Teléfono</ion-label>\n		    <ion-input id="lab2" type="number" [(ngModel)]="tel"></ion-input>\n		  </ion-item>\n\n		  <ion-item id="in">\n		    <ion-label id="lab">Contraseña</ion-label>\n		    <ion-input id="lab2" type="password" [(ngModel)]="pass"></ion-input>\n		  </ion-item>\n\n		</ion-list>\n\n		<div padding>\n		  <button ion-button full #sol id="sol" color="teal" (click)="guardar()">Guardar</button>\n		</div>\n\n	</div>\n  \n</ion-content>\n'/*ion-inline-end:"/home/derdavid2010/Documentos/LavaMex/LavaMex/src/pages/perfil/perfil.html"*/,
+            selector: 'page-perfil',template:/*ion-inline-start:"/home/derdavid2010/Documentos/LavaMex/LavaMex/src/pages/perfil/perfil.html"*/'<ion-header >\n\n  <ion-navbar color="bluedark">\n\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <ion-title>Mi Perfil</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n<ion-content scrollbar-x="false" scrollbar-y="false">\n	<div #per id="per" text-center>\n		<ion-icon #ic id="ic" name="person"></ion-icon>\n\n		<p>\n			<ion-input id="nom" readonly [(ngModel)]="nombre"></ion-input>\n			<ion-input id="Id" readonly [(ngModel)]="id"></ion-input>\n		</p>\n\n	</div> \n\n	<div #dat id="dat">\n\n		<ion-list>\n\n		  <ion-item id="in">\n		    <ion-label id="lab">Correo</ion-label>\n		    <ion-input id="lab2" [(ngModel)]="correo"></ion-input>\n		  </ion-item>\n\n		  <ion-item id="in">\n		    <ion-label id="lab">Teléfono</ion-label>\n		    <ion-input id="lab2" type="number" [(ngModel)]="tel"></ion-input>\n		  </ion-item>\n\n		  <ion-item id="in">\n		    <ion-label id="lab">Contraseña</ion-label>\n		    <ion-input id="lab2" type="password" [(ngModel)]="pass"></ion-input>\n		  </ion-item>\n\n		</ion-list>\n\n		<div padding>\n		  <button ion-button full #sol id="sol" color="teal" (click)="guardar()">Guardar</button>\n		</div>\n\n	</div>\n  \n</ion-content>\n'/*ion-inline-end:"/home/derdavid2010/Documentos/LavaMex/LavaMex/src/pages/perfil/perfil.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_web_service_web_service__["a" /* WebServiceProvider */]])
     ], PerfilPage);
@@ -566,35 +568,35 @@ webpackEmptyAsyncContext.id = 124;
 
 var map = {
 	"../pages/calendario/calendario.module": [
-		289,
+		290,
 		7
 	],
 	"../pages/historial/historial.module": [
-		290,
+		291,
 		6
 	],
 	"../pages/inicio/inicio.module": [
-		291,
+		292,
 		5
 	],
 	"../pages/pago/pago.module": [
-		292,
+		293,
 		4
 	],
 	"../pages/paquete/paquete.module": [
-		293,
+		294,
 		3
 	],
 	"../pages/perfil/perfil.module": [
-		294,
+		295,
 		2
 	],
 	"../pages/registrar/registrar.module": [
-		295,
+		296,
 		1
 	],
 	"../pages/vehiculos/vehiculos.module": [
-		296,
+		297,
 		0
 	]
 };
@@ -614,13 +616,13 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 211:
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(234);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -628,7 +630,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 233:
+/***/ 234:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -639,20 +641,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_calendar__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(82);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(288);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_historial_historial__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_vehiculos_vehiculos__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_perfil_perfil__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_inicio_inicio__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_calendario_calendario__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_paquete_paquete__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_pago_pago__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_registrar_registrar__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_web_service_web_service__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_global_global__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_home__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_historial_historial__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_vehiculos_vehiculos__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_perfil_perfil__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_inicio_inicio__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_calendario_calendario__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_paquete_paquete__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_pago_pago__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_registrar_registrar__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_status_bar__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_splash_screen__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_web_service_web_service__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_global_global__ = __webpack_require__(83);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -679,27 +682,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_historial_historial__["a" /* HistorialPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_vehiculos_vehiculos__["a" /* VehiculosPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_perfil_perfil__["a" /* PerfilPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_inicio_inicio__["a" /* InicioPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_calendario_calendario__["a" /* CalendarioPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_paquete_paquete__["a" /* PaquetePage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_pago_pago__["a" /* PagoPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_registrar_registrar__["a" /* RegistrarPage */]
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_historial_historial__["a" /* HistorialPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_vehiculos_vehiculos__["a" /* VehiculosPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_perfil_perfil__["a" /* PerfilPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_inicio_inicio__["a" /* InicioPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_calendario_calendario__["a" /* CalendarioPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_paquete_paquete__["a" /* PaquetePage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_pago_pago__["a" /* PagoPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_registrar_registrar__["a" /* RegistrarPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/calendario/calendario.module#CalendarioPageModule', name: 'CalendarioPage', segment: 'calendario', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/historial/historial.module#HistorialPageModule', name: 'HistorialPage', segment: 'historial', priority: 'low', defaultHistory: [] },
@@ -714,25 +718,26 @@ var AppModule = (function () {
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_historial_historial__["a" /* HistorialPage */],
-                __WEBPACK_IMPORTED_MODULE_9__pages_vehiculos_vehiculos__["a" /* VehiculosPage */],
-                __WEBPACK_IMPORTED_MODULE_10__pages_perfil_perfil__["a" /* PerfilPage */],
-                __WEBPACK_IMPORTED_MODULE_11__pages_inicio_inicio__["a" /* InicioPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_calendario_calendario__["a" /* CalendarioPage */],
-                __WEBPACK_IMPORTED_MODULE_13__pages_paquete_paquete__["a" /* PaquetePage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_pago_pago__["a" /* PagoPage */],
-                __WEBPACK_IMPORTED_MODULE_15__pages_registrar_registrar__["a" /* RegistrarPage */]
+                __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* MyApp */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_historial_historial__["a" /* HistorialPage */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_vehiculos_vehiculos__["a" /* VehiculosPage */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_perfil_perfil__["a" /* PerfilPage */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_inicio_inicio__["a" /* InicioPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_calendario_calendario__["a" /* CalendarioPage */],
+                __WEBPACK_IMPORTED_MODULE_14__pages_paquete_paquete__["a" /* PaquetePage */],
+                __WEBPACK_IMPORTED_MODULE_15__pages_pago_pago__["a" /* PagoPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_registrar_registrar__["a" /* RegistrarPage */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_16__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_17__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_17__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_18__ionic_native_splash_screen__["a" /* SplashScreen */],
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_calendar__["a" /* Calendar */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_18__providers_web_service_web_service__["a" /* WebServiceProvider */],
-                __WEBPACK_IMPORTED_MODULE_19__providers_global_global__["a" /* GlobalProvider */]
+                __WEBPACK_IMPORTED_MODULE_19__providers_web_service_web_service__["a" /* WebServiceProvider */],
+                __WEBPACK_IMPORTED_MODULE_20__providers_global_global__["a" /* GlobalProvider */],
+                __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__["a" /* Facebook */]
             ]
         })
     ], AppModule);
@@ -743,15 +748,15 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 288:
+/***/ 289:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_historial_historial__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_vehiculos_vehiculos__ = __webpack_require__(111);
@@ -1028,6 +1033,7 @@ var HomePage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_web_service_web_service__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_global_global__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__registrar_registrar__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__ = __webpack_require__(170);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1044,6 +1050,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the InicioPage page.
  *
@@ -1051,13 +1058,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var InicioPage = (function () {
-    function InicioPage(navCtrl, navParams, webService, alertCtrl, globi) {
+    function InicioPage(navCtrl, navParams, webService, alertCtrl, globi, fb) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.webService = webService;
         this.alertCtrl = alertCtrl;
         this.globi = globi;
+        this.fb = fb;
         this.user = { nombre: '', correo: '', celular: '', pass: '' };
+        this.correo = "derdavid2010@gmail.com";
+        this.pass = "dadi1809";
+        this.ip = "localhost";
     }
     InicioPage.prototype.ionViewDidLoad = function () {
         var _this = this;
@@ -1089,13 +1100,13 @@ var InicioPage = (function () {
                     text: 'Save',
                     handler: function (data) {
                         console.log('Saved clicked ' + data.title);
-                        _this.globi.ip = data.title;
                         _this.ip = data.title;
                     }
                 }
             ]
         });
-        prompt.present();
+        //prompt.present();
+        this.globi.ip = this.ip;
     };
     InicioPage.prototype.entrar = function () {
         var _this = this;
@@ -1121,11 +1132,39 @@ var InicioPage = (function () {
     InicioPage.prototype.registrar = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__registrar_registrar__["a" /* RegistrarPage */], { ip: this.ip });
     };
+    InicioPage.prototype.loginfb = function () {
+        var _this = this;
+        this.fb.login(['public_profile', 'user_friends', 'email'])
+            .then(function (res) {
+            if (res.status === "connected") {
+                _this.getUserDetail(res.authResponse.userID);
+            }
+            else {
+            }
+        })
+            .catch(function (e) { return console.log('Error logging into Facebook', e); });
+    };
+    InicioPage.prototype.getUserDetail = function (userid) {
+        var _this = this;
+        this.fb.api("/" + userid + "/?fields=id,email,name,picture,gender", ["public_profile"])
+            .then(function (res) {
+            console.log(res);
+            var users = res;
+            var prompt = _this.alertCtrl.create({
+                title: 'Facebook:',
+                message: "Nombre: " + users.name + "correo: " + users.email
+            });
+            prompt.present();
+        })
+            .catch(function (e) {
+            console.log(e);
+        });
+    };
     InicioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-inicio',template:/*ion-inline-start:"/home/derdavid2010/Documentos/LavaMex/LavaMex/src/pages/inicio/inicio.html"*/'<!--\n  Generated template for the InicioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n</ion-header>\n\n\n<ion-content padding id="body">\n\n	<div padding text-center color="blue" id="tit">\n\n		<ion-img src="../assets/imgs/shine.png" id="logo"></ion-img>\n\n	</div>\n\n	<div padding>\n\n		<ion-list>\n\n		  <ion-item  id="in1">\n		    <ion-input type="text" placeholder="Correo" [(ngModel)]="correo"></ion-input>\n		  </ion-item>\n\n		  <ion-item  id="in2">\n		    <ion-input type="password" placeholder="Contraseña" [(ngModel)]="pass"></ion-input>\n		  </ion-item>\n\n		</ion-list>\n\n	    <button ion-button full id="en" (click)="entrar()"><b>Iniciar Sesión</b></button>\n\n	</div>\n\n	<div padding text-center>\n\n		<b>¿Eres nuevo? <a (click)="registrar()">Regístrate</a></b>\n\n	</div>\n\n	<div text-center>\n\n		<b>O</b>\n\n	</div>\n\n	<div padding text-center>\n\n		<button ion-button full id="sol" (click)="entrar()">Ingresar con Facebook</button>\n\n	</div>\n\n</ion-content>\n'/*ion-inline-end:"/home/derdavid2010/Documentos/LavaMex/LavaMex/src/pages/inicio/inicio.html"*/,
+            selector: 'page-inicio',template:/*ion-inline-start:"/home/derdavid2010/Documentos/LavaMex/LavaMex/src/pages/inicio/inicio.html"*/'<!--\n  Generated template for the InicioPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n</ion-header>\n\n\n<ion-content padding id="body">\n\n	<div padding text-center color="blue" id="tit">\n\n		<ion-img src="../assets/imgs/shine.png" style="background: transparent" id="logo"></ion-img>\n\n	</div>\n\n	<div padding>\n\n		<ion-list>\n\n		  <ion-item  id="in1">\n		    <ion-input type="text" placeholder="Correo" [(ngModel)]="correo"></ion-input>\n		  </ion-item>\n\n		  <ion-item  id="in2">\n		    <ion-input type="password" placeholder="Contraseña" [(ngModel)]="pass"></ion-input>\n		  </ion-item>\n\n		</ion-list>\n\n	    <button ion-button full id="en" (click)="entrar()"><b>Iniciar Sesión</b></button>\n\n	</div>\n\n	<div padding text-center>\n\n		<b>¿Eres nuevo? <a (click)="registrar()">Regístrate</a></b>\n\n	</div>\n\n	<div text-center>\n\n		<b>O</b>\n\n	</div>\n\n	<div padding text-center>\n\n		<button ion-button full id="sol" (click)="loginfb()">Ingresar con Facebook</button>\n\n	</div>\n\n</ion-content>\n'/*ion-inline-end:"/home/derdavid2010/Documentos/LavaMex/LavaMex/src/pages/inicio/inicio.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_web_service_web_service__["a" /* WebServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__providers_global_global__["a" /* GlobalProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_web_service_web_service__["a" /* WebServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__providers_global_global__["a" /* GlobalProvider */], __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__["a" /* Facebook */]])
     ], InicioPage);
     return InicioPage;
 }());
@@ -1174,5 +1213,5 @@ var GlobalProvider = (function () {
 
 /***/ })
 
-},[211]);
+},[212]);
 //# sourceMappingURL=main.js.map
