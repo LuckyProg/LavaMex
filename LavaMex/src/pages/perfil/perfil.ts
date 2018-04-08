@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { WebServiceProvider } from '../../providers/web-service/web-service';
 
+
 /**
  * Generated class for the PerfilPage page.
  *
@@ -21,6 +22,7 @@ export class PerfilPage {
 	pass = "";
   nombre = "";
   id= "";
+  users: any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public webs: WebServiceProvider) {
   }
@@ -30,18 +32,25 @@ export class PerfilPage {
     this.webs.usuarioId()
     .subscribe(
       (data) => { // Success
-        let resul: any = data;
-        console.log(resul.nombre);
-        this.correo = resul.correo;
-        this.tel = resul.celular;
-        this.pass = resul.pass;
-        this.nombre = "    Nombre:  "+resul.nombre;
-        this.id = "    Código:  "+resul._id;
+        this.users = data;
+        console.log(this.users.nombre);
+        this.correo = this.users.correo;
+        this.tel = this.users.celular;
+        this.pass = this.users.pass;
+        this.nombre = "    Nombre:  "+this.users.nombre;
+        this.id = "    Código:  "+this.users._id;
       },
       (error) =>{
         console.error(error);
       }
     );
+  }
+
+  guardar(){
+    this.users.correo = this.correo;
+    this.users.celular = this.tel;
+    this.users.pass = this.pass;
+    this.webs.actualizarUsuario(this.users);
   }
 
 }

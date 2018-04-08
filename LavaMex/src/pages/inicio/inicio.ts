@@ -22,8 +22,8 @@ import { Facebook } from '@ionic-native/facebook';
 export class InicioPage {
 
   user: any = {nombre:'',correo:'',celular:'',pass:''};
-  correo: any = "derdavid2010@gmail.com";
-  pass: any = "dadi1809";
+  correo: any = "123@123.123";
+  pass: any = "123";
   ip: any = "localhost";
 
 

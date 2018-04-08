@@ -8,11 +8,6 @@
 
     <ion-title>Vehículos</ion-title>
 
-    <ion-buttons end>
-      <button ion-button (click)="centrar()"><ion-icon name="expand" style="font-size: 22px;"></ion-icon></button>
-      <button ion-button (click)="addMarker()"><ion-icon name="flag" style="font-size: 22px;"></ion-icon></button>
-    </ion-buttons>
-
   </ion-navbar>
 
 </ion-header>
@@ -20,39 +15,47 @@
 
 <ion-content  id="vehi" padding>
 
-	<ion-card>
+	<div padding>
+	  <button ion-button full #sol id="sol" color="teal" (click)="agregar()">
+	  	<ion-icon name="add" style="margin-right:5%;"></ion-icon>Nuevo
+	  </button>
+	</div>
+
+	<ion-card *ngFor="let c of carros">
 
 	  <ion-card-header id="tit">
-	    <b>Agregados</b>
+	    <ion-icon name="car" item-start></ion-icon><b style="margin-left: 5%;">Coche</b>
+	      <button (click)="guardar()" style="background:transparent;margin-left:13%;"><ion-icon name="bookmark"></ion-icon>
+	      	<b style="margin-left:2%;">Editar</b></button>
+	      <button (click)="borrar(c)" style="background:transparent;"><ion-icon name="trash"></ion-icon>
+	      	<b style="margin-left:2%;">Borrar</b></button>
 	  </ion-card-header>
 
 	  <ion-list>
-	    <button ion-item>
-	      <ion-icon name="car" item-start></ion-icon>
-	      Nissan
-	      <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
-	    </button>
 
+	  	<ion-item>
+		    <ion-label>Marca</ion-label>
+		    <ion-input type="text" id="in" [(ngModel)]='c.marca'></ion-input>
+		</ion-item>
 	    <hr>
 
-	    <button ion-item>
-	      <ion-icon name="bus" item-start></ion-icon>
-	      BMW
-	      <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
-	    </button>
-
+	    <ion-item>
+		    <ion-label>Modelo</ion-label>
+		    <ion-input type="text" id="in" [(ngModel)]='c.modelo'></ion-input>
+		</ion-item>
 	    <hr>
 
-	    <button ion-item>
-	      <ion-icon name="car" item-start></ion-icon>
-	      Tesla
-	      <ion-icon name="ios-arrow-forward-outline" item-end></ion-icon>
-	    </button>
+	    <ion-item>
+		    <ion-label>Placa</ion-label>
+		    <ion-input type="text" id="in" [(ngModel)]='c.placa'></ion-input>
+		</ion-item>
+	    <hr>
 
-	    <button ion-item color="teal" outline id="agregar">
-		    <ion-icon name="add" item-start></ion-icon>
-		    Nuevo
-		</button>
+	    <ion-item>
+		    <ion-label>Color</ion-label>
+		    <ion-input type="text" id="in" [(ngModel)]='c.color'></ion-input>
+		</ion-item>
+	    <hr>
 
 	  </ion-list>
 

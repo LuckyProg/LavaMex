@@ -40233,6 +40233,10 @@ page-vehiculos #tit {
   background: #ffcc80;
 }
 
+page-vehiculos #in {
+  border-bottom: 1px solid gray;
+}
+
 page-vehiculos hr {
   margin: 0px;
   height: 1px;

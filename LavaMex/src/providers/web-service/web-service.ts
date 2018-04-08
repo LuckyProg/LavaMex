@@ -50,4 +50,25 @@ export class WebServiceProvider {
 		return this.http.get('http://'+this.globi.ip+':3000/usuarioById/'+this.globi.id);
 	}
 
+	actualizarUsuario(data: any){
+		const req = this.http.put('http://'+this.globi.ip+':3000/usuarioById/'+this.globi.id, data)
+	      .subscribe(
+	        res => {
+	          console.log(res);
+	        },
+	        err => {
+	          console.log("Error occured");
+	        }
+	      );
+	}
+
+	lavadosUser(){
+		return this.http.get('http://'+this.globi.ip+':3000/lavadoById_Usuario/'+this.globi.id);
+	}
+
+	direccionLavado(lat: any, lon: any){
+		return this.http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lon+'&key=AIzaSyDdAXf2C-3uvAsKfRW1Jq87EInT9fIShdY');
+		
+	}
+
 }

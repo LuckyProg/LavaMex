@@ -86,7 +86,7 @@ export class PaquetePage {
         if(this.paquete==3){tipo="pro";}
         if(this.paquete==4){tipo="premium";}
         let date = new Date(this.year, this.month, this.day, this.horario, 0, 0, 0);
-        this.lavado = {ubicacion:{latitud:this.lat, longitud:this.lon}, fecha:date, tipo:tipo, pago:pago, status:'espera', _idUsuario:this.id};
+        this.lavado = {ubicacion:{latitud:this.lat, longitud:this.lon}, fecha:date, tipo:tipo, placa:'ggg', pago:pago, status:'espera', _idUsuario:this.id};
         this.webService.registrarLavado(this.lavado, this.ip);
         this.navCtrl.setRoot(HomePage, {alert: true, ip: this.ip, id: this.id});
       }
